@@ -45,7 +45,11 @@ export class ItemsComponent {
     this._amount = value;
   }
 
- 
+
+  timenow: Date = new Date();
+  amount_n : number = Number(this.amount);
+
+
   constructor(private router:Router, private todoservice: TodoService){}
 
   
@@ -55,15 +59,17 @@ export class ItemsComponent {
 
         description: this.content,
   
-        type: 'a',
-        amount:50,
-      
-
+        type: this.type,
+        amount: this.amount_n,
+    
 
       }
 
       this.todoservice.addItems(newItem).subscribe();
       this.content = '';
+      this.type = '';
+      this.amount = '';
+
       
     }
  

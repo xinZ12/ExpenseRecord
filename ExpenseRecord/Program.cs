@@ -1,4 +1,5 @@
 using ExpenseRecord;
+using ExpenseRecord.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 
 
-
+builder.Services.AddSingleton<IToDoItemService, ToDoItemService>();
 builder.Services.Configure<ToDoItemDatabaseSettings>(builder.Configuration.GetSection("ToDoItemDatabase"));
 
 

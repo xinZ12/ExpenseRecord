@@ -26,6 +26,17 @@
     border-bottom:1.5px solid gainsboro;
 }
 
+.oneitem2{
+    margin-top: 48px;
+    display:flex;
+    align-items: center;
+    margin-left: 9px;
+    width:430px;
+    border: none;
+    color: #70bbdd;
+}
+
+
 input[type="checkbox"]{
     width: 40px;
     margin-left: 9px;

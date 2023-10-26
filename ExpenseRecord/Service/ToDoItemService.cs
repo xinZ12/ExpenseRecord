@@ -17,13 +17,16 @@ namespace ExpenseRecord.Service
             IOptions<ToDoItemDatabaseSettings> ToDoItemStoreDatabaseSettings)
         {
             var mongoClient = new MongoClient(
-                ToDoItemStoreDatabaseSettings.Value.ConnectionString);
+                //ToDoItemStoreDatabaseSettings.Value.ConnectionString);
+                "mongodb://localhost:27017");
 
             var mongoDatabase = mongoClient.GetDatabase(
-                ToDoItemStoreDatabaseSettings.Value.DatabaseName);
+                "ExpenseRecord");
+            //ToDoItemStoreDatabaseSettings.Value.DatabaseName);
 
             _ToDoItemsCollection = mongoDatabase.GetCollection<ToDoItem>(
-                ToDoItemStoreDatabaseSettings.Value.CollectionName);
+                "ExpenseRecord");
+            //ToDoItemStoreDatabaseSettings.Value.CollectionName);
         }
 
         public async Task Create(ToDoItem newItem)
@@ -61,14 +64,14 @@ namespace ExpenseRecord.Service
         }
         
 
-        public async Task Upsert(string id, ToDoItem updatedItem)
-        {
+        //public async Task Upsert(string id, ToDoItem updatedItem)
+        //{
             // CreatedTime can't be changed
-            var toDoItem = await _ToDoItemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
-            updatedItem.CreatedTime = toDoItem.CreatedTime;
+        //    var toDoItem = await _ToDoItemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        //    updatedItem.CreatedTime = toDoItem.CreatedTime;
 
-            await _ToDoItemsCollection.ReplaceOneAsync(x => x.Id == id, updatedItem);
-        }
+        //    await _ToDoItemsCollection.ReplaceOneAsync(x => x.Id == id, updatedItem);
+        //}
         
     }   
 
