@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ExpenseRecord.Model
 {
   
-    [BsonIgnoreExtraElements]
+    //[BsonIgnoreExtraElements]
     public class ToDoItem
     {
         [BsonId]
