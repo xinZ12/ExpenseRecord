@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+<body>
+<h1 id ="title" style="margin-top: 14px;" > Expense Record </h1>
+
+
+<div class="searchbar">
+  
+    <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search..."  id="searchInput" [(ngModel)]="searchtitle" name="searchbox" autocomplete="off">
+        <button id="searchbutton" (click)="searchButton()"></button>
+    </form>
+    
+    <button id="reloadbutton" (click)="reloadButton()"> Reload </button>
+</div>
+
+
+<div class="sortbar" style="margin-top: 14px;">
+    <button class="sortbutton" id="button1" (click)="sortdescription()">Sort by description</button> 
+    <button class="sortbutton" id="button2" (click)="sorttime()">Sort by Time</button> 
+    
+</div>
+
+
+<div class="itemlist">
+    <div *ngFor='let item of showlist'>
+        <div class="oneitem2">
+            <!--<input type="checkbox"  name="homeCheckbox" [(ngModel)]="item.done" onclick="return false;" checked="checked"> --> 
+            <div id="showlist" [routerLink]="['/todo-detail', item.id]">{{item.description}}</div> 
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <button id="createbutton" [routerLink]="['/create-item']"> Create New Expense </button>
+</div>
+
+
+
+</body>

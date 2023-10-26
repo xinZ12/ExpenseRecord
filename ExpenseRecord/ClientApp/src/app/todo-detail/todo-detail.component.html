@@ -1,0 +1,22 @@
+<div class="back" style="margin-top: 10px;">
+    <button id="backbutton2" [routerLink]="['/']"> <span style="font-weight: 1000;">&larr; </span> Back to List </button>
+ 
+    
+</div>
+
+<div class="oneitem">
+    <!--<input type="checkbox" id="onecheckbox2" name = "onecheckbox2-0" [(ngModel)]="isdone">   -->   
+    <!--<label for="onecheckbox2"></label>-->
+    <div class="inputbox">
+        <input type="text" placeholder="Write something..." [(ngModel)]="content"  name="recordContent" id="inputText2">
+        <div id="type_">[(ngModel)]="typeis"</div> 
+        <div id="amount_">[(ngModel)]="amountis"</div>
+        <div id="data_">[(ngModel)]="datais"</div>
+    </div>
+</div>
+
+<div class="dansbutton" style="margin-top: 450px;">
+    <button id="dansbutton2" class="deletebutton" (click)="deletebutton()"> Delete </button> 
+    <!--<button id="dansbutton3" class="savebutton" (click)="saveToUpsert()"> Save</button>-->
+    
+</div>

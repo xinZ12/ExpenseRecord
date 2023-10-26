@@ -17,3 +17,14 @@ const PROXY_CONFIG = [
 ]
 
 module.exports = PROXY_CONFIG;
+
+/*
+{
+  "/api/**": {
+    "target": "http://cn0005s21w10274:5211/",
+      "secure": false,
+        "changeOrigin": true,
+          "logLevel": "debug"
+  }
+
+}*/

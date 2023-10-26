@@ -8,7 +8,10 @@ namespace ExpenseRecord
         [Required]
         [StringLength(50)]
         public string Description { get; set; } = string.Empty;
-        public bool Done { get; set; }
+
+        public string Type { get; set; } = string.Empty;
+
+        public double Amount { get; set; } = double.MaxValue;
 
 
     }

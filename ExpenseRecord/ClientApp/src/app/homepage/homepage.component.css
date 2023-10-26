@@ -1,0 +1,212 @@
+
+
+#title{
+    color: #70bbdd;
+    text-align: center;
+
+    font-size: 35px;
+}
+
+
+/* searching box */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    background: none;
+    font-weight: 500;
+    font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+    
+}
+
+div.search {padding: 30px 0;}
+
+form {
+    position: relative;
+    width: 300px;
+}
+
+#searchInput, #searchbutton {
+    border: none;
+    outline: none;
+}
+
+
+#searchInput {
+    
+    height: 42px;
+    padding-left: 13px;
+    width: 300px;
+    border-radius: 42px;
+    border: 1px solid #dfe1e5;
+    background: none;
+    transition: .3s linear;
+    float: right;
+    box-shadow: rgb(179, 215, 238) 0px 0px 2px ;
+}
+
+.searchbar button {
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+    position: absolute;
+    background: none;
+    top: -2px;
+    right: 0;
+}
+
+
+.searchbar {background: none;}
+.searchbar form {
+    height: 42px;
+}
+
+
+#searchInput:focus{
+    box-shadow: rgb(213, 219, 223) 0px 0px 15px ;
+}
+
+#searchbutton:before{
+
+    content: "\f002";
+    font-family: FontAwesome;
+    color:  #70bbdd;
+}
+
+#searchbutton:active::before{
+    color: #ffaee5;
+}
+
+
+
+/*----*/
+
+.searchbar{
+
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+
+}
+
+#reloadbutton{
+    font-weight:bold;
+    width: 90px;
+    background: none;
+    border: 2px solid  #70bbdd;
+    border-radius: 40px;
+    text-align: center;
+    color: #70bbdd;
+
+}
+
+#reloadbutton:hover{
+    background:  gainsboro;
+    border: none;
+    font-weight:bold;
+    box-shadow: rgb(172, 202, 221) 0px 0px 4px ;
+}
+
+
+
+/*------*/
+
+
+
+.sortbar{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:400px;
+    margin: 0 auto;
+}
+.sortbutton{
+    width: 180px;
+    height: 30px;
+    font-size: 11px;
+    border-radius: 40px;
+    background: none;
+    border: 0.5px solid rgb(190, 190, 190);
+    box-shadow: rgb(207, 223, 233) 0px 0px 4px ;
+
+}
+
+.sortbutton:hover{
+    
+    background:  gainsboro;
+    border: none;
+    box-shadow: rgb(172, 202, 221) 0px 0px 4px ;
+
+}
+
+/*-----*/
+
+
+.itemlist{
+    height: 400px;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+
+/*-----*/
+
+#createbutton{
+    display: block;
+    margin: 0 auto;
+    width:400px;
+    height: 42px;
+    font-size: 11px;
+    border-radius: 40px;
+    margin-top: 18px;
+    background: #70bbdd;
+    border: none;
+    font-size: 18px;
+    color: white;
+}
+
+#createbutton:hover{
+    background: gainsboro;
+    box-shadow: rgb(172, 202, 221) 0px 0px 4px ;
+}
+
+/*--------*/
+
+.oneitem2{
+    display: flex;
+    margin-top: 48px;
+    display:flex;
+    align-items: center;
+    margin-left: 9px;
+    width:430px;
+    height: 20px;
+    border-bottom:1.5px solid gainsboro;
+}
+
+input[type="checkbox"]{
+    width: 40px;
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-bottom: 25px;
+}
+
+#showlist{
+    border:none;
+    outline: none;
+    width:90%;
+    height: 100%;
+    font-size: 19px;
+    margin-bottom: 32px;
+}
+
+#showlist:hover{
+    color:#70bbdd;
+    font-size: 23px;
+}

@@ -24,7 +24,7 @@ using ExpenseRecord;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ToDoList.Api.Controllers
+namespace ExpenseRecord.Controllers
 {
 
     //[Route("api/v1/items")]
@@ -53,37 +53,17 @@ namespace ToDoList.Api.Controllers
             var result = new ToDoItem()
             {
                 Description = toDoListRequest.Description,
-                Done = toDoListRequest.Done,
-                //Favorite = toDoListRequest.Favorite,
+                //Done = toDoListRequest.Done,
+                Type = toDoListRequest.Type,
+                Amount = toDoListRequest.Amount,
+                
             };
             await _toDoItemService.Create(result);
             return Created("", result);  // 201;
         }
 
 
-        // Upsert a todo item
-        [HttpPut("{id}")]
-        [ProducesResponseType(typeof(ToDoItem), 200)]  // success
-        [ProducesResponseType(typeof(ToDoItem), 201)]
-        [ProducesResponseType(typeof(ToDoItem), 400)]  // InvalidRequest
-        [ProducesResponseType(typeof(ToDoItem), 404)]
-        public async Task<ActionResult<ToDoItem>> UpsertItem(string id, [FromBody] ToDoItem toDoItem)
-        {
-            bool isCreate = false;
-            var existingItem = await _toDoItemService.Get(id);
-            if (existingItem is null)
-            {
-                isCreate = true;
-                await _toDoItemService.Create(toDoItem);
-            }
-            else
-            {
-                await _toDoItemService.Upsert(id, toDoItem);
-            }
-
-            return isCreate ? Created("", toDoItem) : Ok(toDoItem);
-        }
-
+        
 
 
         // Get item by id
@@ -133,5 +113,39 @@ namespace ToDoList.Api.Controllers
                 return NoContent();
             }
         }
+
+
+
+
+
+
+
+
+
+
+        // Upsert a todo item
+        /*
+        [HttpPut("{id}")]
+        [ProducesResponseType(typeof(ToDoItem), 200)]  // success
+        [ProducesResponseType(typeof(ToDoItem), 201)]
+        [ProducesResponseType(typeof(ToDoItem), 400)]  // InvalidRequest
+        [ProducesResponseType(typeof(ToDoItem), 404)]
+        public async Task<ActionResult<ToDoItem>> UpsertItem(string id, [FromBody] ToDoItem toDoItem)
+        {
+            bool isCreate = false;
+            var existingItem = await _toDoItemService.Get(id);
+            if (existingItem is null)
+            {
+                isCreate = true;
+                await _toDoItemService.Create(toDoItem);
+            }
+            else
+            {
+                await _toDoItemService.Upsert(id, toDoItem);
+            }
+
+            return isCreate ? Created("", toDoItem) : Ok(toDoItem);
+        }
+        */
     }
 }
