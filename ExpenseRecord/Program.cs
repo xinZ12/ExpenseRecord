@@ -1,8 +1,23 @@
+using ExpenseRecord;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+
+
+
+builder.Services.Configure<ToDoItemDatabaseSettings>(builder.Configuration.GetSection("ToDoItemDatabase"));
+
+
+
+
+
+
+
+
 
 var app = builder.Build();
 
