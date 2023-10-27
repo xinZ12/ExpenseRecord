@@ -15,7 +15,7 @@ namespace ExpenseRecord.Model
 
         public string Type { get; set; } = string.Empty;
 
-        public double Amount { get; set; } = double.MaxValue;
+        public double Amount { get; set; } = new double();
 
         [BsonRepresentation(BsonType.String)]
         public DateTimeOffset CreatedTime { get; set; } = DateTimeOffset.UtcNow;

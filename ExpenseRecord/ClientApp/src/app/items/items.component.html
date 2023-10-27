@@ -7,19 +7,19 @@
 <div class="oneitem">
     <!--<input type="checkbox" id="onecheckbox1" [(ngModel)]="isdone" name="onecheckbox1-0">  -->
     <div class="inputbox">
-        <input type="text" placeholder="Write description..." [(ngModel)]="content"  id="inputText1" name="recordContext" autocomplete="off">      
+        <input type="text" placeholder="write description..." [(ngModel)]="content"  id="inputText1" name="recordContext" autocomplete="off">      
     </div>
 </div>
 
 <div class="oneitem">
     <div class="inputbox">
-        <input type="text" placeholder="Write type..." [(ngModel)]="type"  id="inputText2" name="recordContext2" autocomplete="off">
+        <input type="text" placeholder="write type..." [(ngModel)]="type"  id="inputText2" name="recordContext2" autocomplete="off">
     </div>
 </div>
 
 <div class="oneitem">
     <div class="inputbox">
-        <input type="text" placeholder="Write amount..." [(ngModel)]="amount"  id="inputText3" name="recordContext3" autocomplete="off">
+        <input type="text" placeholder="write amount..." [(ngModel)]="amount_str"  id="inputText3" name="recordContext3" autocomplete="off">
     </div>
 </div>
 
@@ -31,7 +31,6 @@
 
 
 <div class="dansbutton" style="margin-top: 170px;">
-    <button id="deleltebutton1" class="deletebutton"> Delete </button>       <!-- In create interface, item can't be delelted -->
-    <button id="savebutton1" class="savebutton" (click)="savebutton()">Save</button>
+    <button id="savebutton1" class="savebutton" (click)="savebutton()" >Save</button>
     
 </div>

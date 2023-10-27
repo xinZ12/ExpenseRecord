@@ -53,7 +53,6 @@ namespace ExpenseRecord.Controllers
             var result = new ToDoItem()
             {
                 Description = toDoListRequest.Description,
-                //Done = toDoListRequest.Done,
                 Type = toDoListRequest.Type,
                 Amount = toDoListRequest.Amount,
                 
@@ -119,12 +118,8 @@ namespace ExpenseRecord.Controllers
 
 
 
-
-
-
-
         // Upsert a todo item
-        /*
+        
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(ToDoItem), 200)]  // success
         [ProducesResponseType(typeof(ToDoItem), 201)]
@@ -146,6 +141,6 @@ namespace ExpenseRecord.Controllers
 
             return isCreate ? Created("", toDoItem) : Ok(toDoItem);
         }
-        */
+        
     }
 }

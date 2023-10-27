@@ -16,7 +16,7 @@
 </div>
 
 
-<div class="sortbar" style="margin-top: 14px;">
+<div class="sortbar" style="margin-top: 16px;">
     <button class="sortbutton" id="button1" (click)="sortdescription()">Sort by description</button> 
     <button class="sortbutton" id="button2" (click)="sorttime()">Sort by Time</button> 
     
@@ -26,7 +26,6 @@
 <div class="itemlist">
     <div *ngFor='let item of showlist'>
         <div class="oneitem2">
-            <!--<input type="checkbox"  name="homeCheckbox" [(ngModel)]="item.done" onclick="return false;" checked="checked"> --> 
             <div id="showlist" [routerLink]="['/todo-detail', item.id]">{{item.description}}</div> 
         </div>
     </div>

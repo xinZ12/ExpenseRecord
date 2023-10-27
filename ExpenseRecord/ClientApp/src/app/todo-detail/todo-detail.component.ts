@@ -20,8 +20,6 @@ import { Subscription } from 'rxjs';
 export class TodoDetailComponent implements OnInit{
 
 
-  //public isdone = false;
-
   constructor(private router:Router, private todoservice: TodoService, private route: ActivatedRoute){
   }
 
@@ -35,7 +33,7 @@ export class TodoDetailComponent implements OnInit{
 
   public content : string='';
   public typeis :  string='';
-  public amountis : number = 0;
+  public amountis : string='';
   public datais : Date= new Date();
   
   getDescription() {
@@ -58,7 +56,7 @@ export class TodoDetailComponent implements OnInit{
   getAmount() {
     const getid = this.route.snapshot.paramMap.get('id');
       this.todoservice.getItemsById(getid).subscribe((item)=>{
-      this.amountis = item.amount;
+      this.amountis = item.amount.toString();
       
     });
    
@@ -74,10 +72,6 @@ export class TodoDetailComponent implements OnInit{
 
 
 
-
-
-
-  /*
   saveToUpsert() {      // Upsert item
       let upsertId = this.route.snapshot.paramMap.get('id');
       //console.log(upsertId);
@@ -87,8 +81,8 @@ export class TodoDetailComponent implements OnInit{
             id: upsertId,
             description: this.content,
             createdTime: new Date(), // .....
-            //type: this.isdone,
-            amount: this.amount,
+            type: this.typeis,
+            amount: Number(this.amountis),
 
          }   
         //console.log(upsertItem);
@@ -97,8 +91,10 @@ export class TodoDetailComponent implements OnInit{
       }
 
       this.content = '';
-      //this.isdone = false;
-  }*/
+      this.typeis = '';
+      this.amountis = '';
+
+  }
 
 
 
@@ -109,7 +105,9 @@ export class TodoDetailComponent implements OnInit{
       this.todoservice.deleteItem(deleteId).subscribe();
     }
     this.content = '';
-   
+    this.typeis = '';
+    this.amountis = '';
+
   }
  
 

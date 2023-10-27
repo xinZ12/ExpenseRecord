@@ -4,25 +4,24 @@
     
 </div>
 
-<div class="oneitem">
-    <!--<input type="checkbox" id="onecheckbox2" name = "onecheckbox2-0" [(ngModel)]="isdone">   -->   
-    <!--<label for="onecheckbox2"></label>-->
+<div class="oneitem">  
     <div class="inputbox">
-        <span type="text"> Description: {{content}}  </span>
-        <!--<input type="text" placeholder="Write something..." [(ngModel)]="content"  name="recordContent" id="inputText2">-->
+        <span class="texttitle"> Description:  </span>
+        <input type="text" id="Input11" [(ngModel)]="content" name="box11">
     </div>
 </div>
 
 <div class="oneitem">
     <div class="inputbox">
-        <span type="text">Type: {{typeis}}  </span>
-        
+        <span class="texttitle"> Type:  </span> 
+        <input type="text" id="Input12" [(ngModel)]="typeis" name="box12">
     </div>
 </div>
 
 <div class="oneitem">
     <div class="inputbox">
-        <span type="text">Amount: {{amountis}}  </span>
+        <span class="texttitle"> Amount:  </span>
+        <input type="text" id="Input13" [(ngModel)]="amountis" name="box13">
     </div>
 </div>
 
@@ -32,8 +31,8 @@
     </div>
 </div>
 
-<div class="dansbutton" style="margin-top: 170px;">
+<div class="dansbutton" style="margin-top: 150px;">
     <button id="dansbutton2" class="deletebutton" (click)="deletebutton()"> Delete </button> 
-    <!--<button id="dansbutton3" class="savebutton" (click)="saveToUpsert()"> Save</button>-->
+    <button id="dansbutton3" class="savebutton" (click)="saveToUpsert()"> Save</button>
     
 </div>

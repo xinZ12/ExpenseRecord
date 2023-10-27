@@ -24,11 +24,6 @@ export class TodoService {
     private Url = 'https://localhost:7081/api/v1/ToDoItems';
 
     // private Url = this.baseUrl + '/api/v1/ToDoItems';
-    
-
-
-
-
 
 
 
@@ -83,39 +78,9 @@ export class TodoService {
  
     
     
-    /*
-    updateTodoById(id: number, values: Object = {}): Todo {
-
-        let todo = this.getTodoById(id);
-
-        if (!todo) {
-            return null;
-        }
-
-        Object.assign(todo, values); // 将更新的values对象的属性值赋给todo对象
-        return todo;
-    }
-*/
-
-
-    /*
-    // 根据Id获取任务
-    getTodoById(id: number): Todo {
-        return this.todos.filter(todo => todo.id === id).pop();
-    }*/
-
-    // 标记一个任务为完成/未完成
-    //TodoComplete(todo: Todo): Todo[] {
-    //    todo.Done = true;
-    //    return this.todos;
-    //}
     
-    /*TodoComplete(todo: Todo){
-        let updatedTodo = this.updateTodoById(todo.id, {
-            complete: !todo.complete
-        });
-        return updatedTodo;
-    }*/
+   
 
+    
 
 }

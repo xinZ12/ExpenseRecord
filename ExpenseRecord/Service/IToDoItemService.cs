@@ -12,7 +12,7 @@ namespace ExpenseRecord.Service
         Task<List<ToDoItem>> Get();
         Task<ToDoItem?> Get(string id);
         Task<bool> Remove(string id);
-        //Task Upsert(string id, ToDoItem updatedToDoItem);
+        Task Upsert(string id, ToDoItem updatedToDoItem);
     }
 
 

@@ -37,17 +37,16 @@ export class ItemsComponent {
     this._type = value;
   }
 
-  private _amount = '';
-  get amount(): string {
-    return this._amount;
+  private _amount_str = '';
+  get amount_str(): string {
+    return this._amount_str;
   }
-  set amount(value: string) {
-    this._amount = value;
+  set amount_str(value: string) {
+    this._amount_str = value;
   }
 
 
   timenow: Date = new Date();
-  amount_n : number = Number(this.amount);
 
 
   constructor(private router:Router, private todoservice: TodoService){}
@@ -58,17 +57,15 @@ export class ItemsComponent {
       const newItem: newTodo = {
 
         description: this.content,
-  
         type: this.type,
-        amount: this.amount_n,
-    
+        amount: Number(this.amount_str),
 
       }
 
       this.todoservice.addItems(newItem).subscribe();
       this.content = '';
       this.type = '';
-      this.amount = '';
+      this.amount_str = '';
 
       
     }

@@ -64,14 +64,14 @@ namespace ExpenseRecord.Service
         }
         
 
-        //public async Task Upsert(string id, ToDoItem updatedItem)
-        //{
+        public async Task Upsert(string id, ToDoItem updatedItem)
+        {
             // CreatedTime can't be changed
-        //    var toDoItem = await _ToDoItemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
-        //    updatedItem.CreatedTime = toDoItem.CreatedTime;
+            var toDoItem = await _ToDoItemsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+            updatedItem.CreatedTime = toDoItem.CreatedTime;
 
-        //    await _ToDoItemsCollection.ReplaceOneAsync(x => x.Id == id, updatedItem);
-        //}
+            await _ToDoItemsCollection.ReplaceOneAsync(x => x.Id == id, updatedItem);
+        }
         
     }   
 
