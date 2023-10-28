@@ -26,7 +26,10 @@
 <div class="itemlist">
     <div *ngFor='let item of showlist'>
         <div class="oneitem2">
-            <div id="showlist" [routerLink]="['/todo-detail', item.id]">{{item.description}}</div> 
+            <div id="showlist" [routerLink]="['/todo-detail', item.id]">
+                <p> {{item.description}} </p>
+                <p> {{item.amount}}</p>
+            </div> 
         </div>
     </div>
 </div>

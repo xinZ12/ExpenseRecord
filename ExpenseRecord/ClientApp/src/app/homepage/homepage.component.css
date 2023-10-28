@@ -204,6 +204,9 @@ input[type="checkbox"]{
     height: 100%;
     font-size: 19px;
     margin-bottom: 32px;
+    display:flex;
+    justify-content: space-between;
+    text-indent: 10px;
 }
 
 #showlist:hover{
